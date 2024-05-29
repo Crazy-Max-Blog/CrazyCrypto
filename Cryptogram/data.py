@@ -115,6 +115,8 @@ class Data:
             return 'Msg not exists'
         return self.bd["chats"][name]["msgs"][id]
         
+    
+        
 d=Data()
 d.createUser('admin', 'nimda')
 d.createChat('admin', 'nimda', 'adminchat', 'tahcnimda')
@@ -139,3 +141,18 @@ d.addMsg('admin1', '1nimda', 'adminchat', 'tahcnimda', '123')
 
 d.addMsg('admin1', '1nimda', 'adminchat', 'tahcnimda', '456')
 d.addMsg('admin', 'nimda', 'adminchat', 'tahcnimda', 'CrazyTest')
+
+def r(url):
+    return url.split("?")[1].replace("=", "='").replace("&", "', ")+"'"
+    
+def c(u):
+    s=u.split('?')[0]
+    return s#[(max(s.rindex('/'), s.rindex(chr(92)))):]
+
+def dcmd(u):
+    print(f"d.{c(u)}({r(u)})")
+    #try:
+    #    print(f"d.{c(u)}({r(u)})")
+    #except:
+    #    pass
+
